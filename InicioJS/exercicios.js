@@ -41,10 +41,10 @@
 // console.log(resultado);
 
 //Exercício 3: Converter Celsius Farenheit
-function converterFarenheit(temperature){
-    return ((temperature*9)/5 + 32);
-}
+// function converterFarenheit(temperature){
+//     return ((temperature*9)/5 + 32);
+// }
 
-let temperatura = 1;
-resultado = converterFarenheit(temperatura);
-console.log("O valor em Farenheit é: "+ resultado);
+// let temperatura = 1;
+// resultado = converterFarenheit(temperatura);
+// console.log("O valor em Farenheit é: "+ resultado);
