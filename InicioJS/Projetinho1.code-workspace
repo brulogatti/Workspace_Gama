@@ -1,7 +1,22 @@
 {
 	"folders": [
 		{
-			"path": "..\\InicioJS_2"
+			"path": "..\\JS_Modulo5"
 		}
-	]
+	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "pwa-node",
+				"request": "launch",
+				"name": "Launch Program",
+				"skipFiles": [
+					"<node_internals>/**"
+				],
+				"program": "c:\\Workspace - Gama\\JS_Modulo5\\exemplo4.js",
+				"__workspaceFolder": "c:\\Workspace - Gama\\JS_Modulo5"
+			}
+		]
+	}
 }
