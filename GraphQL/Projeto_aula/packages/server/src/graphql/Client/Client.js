@@ -1,4 +1,6 @@
 import {gql} from 'apollo-server-express';
+import * as uuid from 'uuid';
+
 import createRepository from '../../io/Database/createRepository';
 import { ListSortmentEnum } from '../List/List';
 
@@ -33,6 +35,15 @@ export const typeDefs = gql`
     extend type Query{
         client(id:ID!): Client
         clients(options: ClientListOptions): ClientList
+    }
+
+    input CreateClientInput{
+        name: String!
+        email: String!
+    }
+
+    extend type Mutation{
+        createClient(input: CreateClientInput!): Client!
     }
 
 `;
@@ -110,5 +121,22 @@ export const resolvers={
             };
         },
     },
+
+    Mutation:{
+        createClient: async (_, {input}) => {
+            const clients = await clientRepository.read();
+            const client = {
+                id: uuid.v4(),
+                name: input.name,
+                email: input.email,
+                disabled: false,
+            }
+
+            await clientRepository.write([...clients, client]);
+
+            return client;
+
+        }
+    }
 };
 
